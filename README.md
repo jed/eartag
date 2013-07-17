@@ -47,6 +47,21 @@ Returns a tagging function. `secret` a required string used as the key for signi
 
 Returns the ID of the client, as parsed, decrypted, and verified from the incoming cookie. If no cookie exists, or the cookie is invalid, a new ID will be generated, returned, and added to the outgoing headers.
 
+```javascript
+var http   = require("http")
+var eartag = require("eartag")("YOUR-SECRET-KEY")
+var server = http.createServer()
+
+server.on("request", function(req, res) {
+  var id = tag(req, res) // a random ID like `092d4b5bcc293d641a3c8b1d6d58d36d`
+
+  res.writeHead(200, {"Content-Type": "text/plain"})
+  res.end("Your ID is: " + id)
+})
+
+server.listen(8000)
+```
+
 This ID (16 random bytes, encoded in hexadecimal) will also be assigned to the `eartag` property of the request. Since this function is synchronous, it can be also easily integrated with multiple vanilla HTTP server listeners as follows:
 
 ```javascript

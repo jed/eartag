@@ -11,6 +11,8 @@ var server = http.createServer()
 server.on("request", function(req, res) {
   var id = tag(req, res)
 
+  assert.equal(id, req.eartag)
+
   res.end(id)
 })
 

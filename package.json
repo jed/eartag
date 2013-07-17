@@ -1,0 +1,21 @@
+{
+  "name": "eartag",
+  "version": "0.0.0",
+  "description": "Tag browsers like farmers tag livestock",
+  "main": "eartag.js",
+  "devDependencies": {
+    "request": "~2.22.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jed/eartag.git"
+  },
+  "author": "Jed Schmidt <where@jed.is>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jed/eartag/issues"
+  }
+}

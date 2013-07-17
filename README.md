@@ -3,6 +3,8 @@ eartag
 
 [![Build Status](https://travis-ci.org/jed/eartag.png?branch=master)](https://travis-ci.org/jed/eartag)
 
+[![NPM](https://nodei.co/npm/eartag.png)](https://nodei.co/npm/eartag/)
+
 eartag is a small node.js library that lets you tag browsers like [farmers tag livestock](http://en.wikipedia.org/wiki/Ear_tag). It attaches an unforgeable cookie to the browser, allowing you to identify subsequent visits. Think of it as a [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) for browsers: instead of using cookies to store authentication and other client state, you store an ID unique to that browser, from which state can be retrieved externally.
 
 Example

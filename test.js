@@ -25,6 +25,7 @@ server.listen(function() {
       assert.ok(tag1)
       assert.ok(tag2)
       assert.equal(tag1, tag2)
+
       server.close()
     })
   })

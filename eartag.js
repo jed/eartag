@@ -76,13 +76,14 @@ Tagger.prototype.read = function(req) {
 
 Tagger.prototype.write = function(id, res) {
   var token   = Tagger.stringify(this.cipher(this.sign(id)))
-  var expires = new Date(Date.now() + 2592000000)
+  var expires = new Date(Date.now() + 2592000000).toGMTString()
 
-  res.setHeader(
-    "Set-Cookie",
-    this.cookieName + "=1; path=/; expires=2; httponly" // add secure if secure
-      .replace(2, expires.toGMTString())
-      .replace(1, token)
+  res.setHeader("Set-Cookie",
+    this.cookieName + "=" + token   + "; " +
+    "path"          + "=" + "/"     + "; " +
+    "expires"       + "=" + expires + "; " +
+    "httponly"
+    // add secure if secure
   )
 
   return id.toString("hex")

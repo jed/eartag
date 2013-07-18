@@ -80,7 +80,6 @@ Tagger.prototype.write = function(id, res) {
 
   res.setHeader("Set-Cookie",
     this.cookieName + "=" + token   + "; " +
-    "path"          + "=" + "/"     + "; " +
     "expires"       + "=" + expires + "; " +
     "httponly"
     // add secure if secure

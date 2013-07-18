@@ -91,9 +91,13 @@ Tagger.prototype.write = function(id, res) {
 Tagger.prototype.tag = function(req, res, next) {
   if (next) setImmediate(next)
 
-  var id = this.read(req) || crypto.randomBytes(16).toString("hex")
+  var id = this.read(req)
 
-  this.write(Buffer(id, "hex"), res)
+  if (!id) {
+    id = crypto.randomBytes(16)
+    this.write(id, res)
+    id = id.toString("hex")
+  }
 
   return req.eartag = id
 }

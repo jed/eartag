@@ -22,6 +22,8 @@ server.listen(function() {
 
   request(url, function(err, res, tag1) {
     request(url, function(err, res, tag2) {
+      assert.ok(tag1)
+      assert.ok(tag2)
       assert.equal(tag1, tag2)
       server.close()
     })

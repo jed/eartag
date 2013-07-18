@@ -1,6 +1,6 @@
 {
   "name": "eartag",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tag browsers like farmers tag livestock",
   "main": "eartag.js",
   "devDependencies": {
